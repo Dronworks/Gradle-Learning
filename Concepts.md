@@ -13,11 +13,7 @@
   Task task = new Compile
   ```
 - We can set variables inside tasks: def someVariable = "abc"
-- We can run tasks fist and last (and they will run before/after every! task we will run) like this
-  ```
-  task (firstTask) { <some code> }
-  task (lastTask) { <some code> }
-  ```
+
 
 ## Wrapper
 - Gradle wrapper holds the version of gradle engine.
