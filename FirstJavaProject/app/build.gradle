@@ -13,12 +13,17 @@ plugins {
 
 project.description = "My test project"
 project.version = 1.0
+project.ext.xyz="custom property"
 
 repositories {
     println 'repositories'
     println project.name
     println project.description
     println project.version
+    println project.projectDir
+    println project.xyz
+    println project.property("xyz")
+
     // Use Maven Central for resolving dependencies.
     mavenCentral()
     mavenLocal() // .m2
