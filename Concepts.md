@@ -13,6 +13,7 @@
   Task task = new Compile
   ```
 - We can set variables inside tasks: def someVariable = "abc"
+- **NOTE** during the configuration phase ALL DEFINED in gradle.properties will run!
 
 
 ## Wrapper
