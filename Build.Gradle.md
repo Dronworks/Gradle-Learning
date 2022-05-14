@@ -7,4 +7,5 @@
 - **NOTE** during the **configuration** phase ALL DEFINED in gradle.properties will run!
   - If task contains method doFirst or doLast it will NOT RUN with every task.
 - To make a task run after another task we need to add **dependsOn**. For example: deployToProdMy.dependsOn deployToStageMy
+- To make a task run after a task is finished we can use **finilizedBy**. For example deployToProdMy.finalizedBy cleanFiles.
 - Tasks can be run with camel case: for exaple deployToProdMy can be run both **gradle deployToProdMy** and **gradle dTPM**
