@@ -7,6 +7,11 @@
   - doLast - will execute **LAST** during the **EXECUTION** phase.
   - doFirst - will execute **FIRST** during the **EXECUTION** phase.
 - Any prints or functions inside the build.gradle - run during configuration phase.
+- When we create new Task it looks something like this:
+  ```
+  project.addTask(task)
+  Task task = new Compile
+  ```
 
 ## Wrapper
 - Gradle wrapper holds the version of gradle engine.
