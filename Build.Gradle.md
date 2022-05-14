@@ -4,5 +4,7 @@
 - We can set project properties inside here, but after plugins block.
 - We can create custom properties like this project.ext.some_property = "abc"
 - Inside tasks there is an Actions block. (inclding methods doLast and doFirst)
-- **NOTE** during the configuration phase ALL DEFINED in gradle.properties will run!
+- **NOTE** during the **configuration** phase ALL DEFINED in gradle.properties will run!
+  - If task contains method doFirst or doLast it will NOT RUN with every task.
+- To make a task run after another task we need to add **dependsOn**. For example: deployToProdMy.dependsOn deployToStageMy
 
