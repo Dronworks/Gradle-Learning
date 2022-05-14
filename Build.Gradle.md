@@ -9,4 +9,4 @@
 - To make a task run after another task we need to add **dependsOn**. For example: deployToProdMy.dependsOn deployToStageMy
 - To make a task run after a task is finished we can use **finilizedBy**. For example deployToProdMy.finalizedBy cleanFiles.
 - Tasks can be run with camel case: for exaple deployToProdMy can be run both **gradle deployToProdMy** and **gradle dTPM**
-- Tasks can run **ALWAYS** with anythink gradle do. defaultTasks task1 task2 task3
+- Tasks can run **ALWAYS** with anythink gradle do. defaultTasks "task1", "task2", "task3"
