@@ -40,8 +40,45 @@ dependencies {
 
 }
 
+task myTask {
+    var someVar = "abc"
+    println someVar
+    doLast { println 'my task' }
+}
+
+task (fistTask) {
+    println 'first Test 123'
+}
+
+task lastTask {
+    println 'after all'
+}
+
 application {
     println 'applications'
     // Define the main class for the application.
     mainClass = 'com.dronworks.App'
 }
+
+task deployToStageMy {
+    doLast {
+        println "Deploy to stage"
+    }
+}
+
+task deployToProdMy {
+    doLast {
+        println 'Deploy to prod'
+    }
+}
+
+task cleaFiles {
+    doLast {
+        println 'Clean files!'
+    }
+}
+
+deployToProdMy.dependsOn deployToStageMy
+deployToProdMy.finalizedBy cleaFiles
+
+defaultTasks "deployToStage"
