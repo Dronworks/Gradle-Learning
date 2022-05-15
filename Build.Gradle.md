@@ -10,3 +10,7 @@
 - To make a task run after a task is finished we can use **finilizedBy**. For example deployToProdMy.finalizedBy cleanFiles.
 - Tasks can be run with camel case: for exaple deployToProdMy can be run both **gradle deployToProdMy** and **gradle dTPM**
 - Tasks can run **ALWAYS** with anythink gradle do. defaultTasks "task1", "task2", "task3"
+- **Spring Plugin**: id 'org.springframework.boot' version '2.6.7' 
+  - Adds the **bootJar** task, and this pligin automatically called during assemble task.
+  - Adds the **bootRun task for running application**.
+  - id 'io.spring.dependency-management' version '1.0.11.RELEASE' - This plugin lets spring know what versions to use. (In dependencies block there is no version for spring depndencies).
