@@ -1,3 +1,16 @@
 ## Concepts
 - Each Block is a **method** on the gradle **object** of the project.
 - 'plugin' is NOT a method. Once it was 'apply plugin', where 'apply' was a method.
+- We can set project properties inside here, but after plugins block.
+- We can create custom properties like this project.ext.some_property = "abc"
+- Inside tasks there is an Actions block. (inclding methods doLast and doFirst)
+- **NOTE** during the **configuration** phase ALL DEFINED in gradle.properties will run!
+  - If task contains method doFirst or doLast it will NOT RUN with every task.
+- To make a task run after another task we need to add **dependsOn**. For example: deployToProdMy.dependsOn deployToStageMy
+- To make a task run after a task is finished we can use **finilizedBy**. For example deployToProdMy.finalizedBy cleanFiles.
+- Tasks can be run with camel case: for exaple deployToProdMy can be run both **gradle deployToProdMy** and **gradle dTPM**
+- Tasks can run **ALWAYS** with anythink gradle do. defaultTasks "task1", "task2", "task3"
+- **Spring Plugin**: id 'org.springframework.boot' version '2.6.7' 
+  - Adds the **bootJar** task, and this pligin automatically called during assemble task.
+  - Adds the **bootRun task for running application**.
+  - id 'io.spring.dependency-management' version '1.0.11.RELEASE' - This plugin lets spring know what versions to use. (In dependencies block there is no version for spring depndencies).
