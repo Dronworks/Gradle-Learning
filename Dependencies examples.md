@@ -35,6 +35,7 @@ dependencies {
   api(platform(project(":platform")))
   implementation("org.slf4j:slf4j-api") // No version
 }
+```
 
 ## Because
 Lets us to add a comment for "why the dependency is there"
