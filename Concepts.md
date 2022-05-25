@@ -27,6 +27,7 @@
 - To create gradle project we run gradle init.
 - If we create application project, build.gradle will be at the application name folder.
 - Application name is at settings.gradle.
+- When creating a web project there is a need to manually add the **webapp** and the **index.html** to **src->main**. Aslo **response.jsp** can be good.
 
 ## Dependencies types
 **Implementation** 
