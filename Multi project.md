@@ -7,6 +7,7 @@ Multi project is a gradle project where we have
 - root **build.gradle** wehere we can set our repositories and dependencies that are common for all subprojects
 - each sub project will have its src + test + build.gradle with his own dependencies
 - each sub project gradle has its own tasks (with the according plugins) **gradle tasks --all**
+- We can see each project dependencies by runnin **gradle {subproject name}:dependencies**
 
 ## Commands of subproject
 gradle :{project name}:{command}
