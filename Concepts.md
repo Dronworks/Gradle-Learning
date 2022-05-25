@@ -96,3 +96,10 @@ To get test coverage by Jacoco:
   ```
   test.finalizedBy jacocoTestReport
   ```
+
+## Sonar
+To enable sonarqube scanning:
+- In build.gradle in plugin add **id 'sonarqube' version '3.0'
+
+To run sonarqube:
+- gradle sonarqube
