@@ -65,3 +65,13 @@
 - gradle build --daemon
 - Does all the calculation for the build, build and launches a daemon that will make future builds faster because the daemon holds all the calculations.
 - gradle build --no-daemon - recalculates everything and stop the daemon.
+
+## Testing
+- Running unit tests requres a block inside build.gradle
+  ```
+  test {
+    useJunitPlatform()
+  }
+  ```
+- To run unit tests in intellij:
+  - File -> Settings -> Build,Execution,Deployment -> BildTools -> Gradle -> Run Tests Using -> Intellij  
