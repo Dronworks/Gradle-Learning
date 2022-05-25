@@ -82,3 +82,17 @@
   ```
 - To run unit tests in intellij:
   - File -> Settings -> Build,Execution,Deployment -> BildTools -> Gradle -> Run Tests Using -> Intellij  
+
+## Jacoco Test Coverage
+To get test coverage by Jacoco:
+- Need plugin **id 'jacoco' that** gives us tasks
+  - jacocoTestCoverageVerification
+  - jacocoTestReport 
+- Need to run test for report, if we want to make sure that the report task won't run without test task, we can add to build.gradle:
+  ```
+  jacocoTestReport.dependsOn test
+  ```
+- If test fails jacoco task wont run. **gradle clean build jacocoTestReport**. In order to it to work we need to add next to build.gradle: **BUT** it will then run after every build
+  ```
+  test.finalizedBy jacocoTestReport
+  ```
