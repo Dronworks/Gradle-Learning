@@ -63,3 +63,14 @@ subprojects {
   }
 }
 ```
+
+## Dependencies between project
+Usually multimodules project needs those modules during the deployment. Hece during the build we need to add the subprojects dependees jars into the main jar (or war).
+- In the root build.gradle need to create a depends on block
+  ```
+  project(':web') {
+    dependencies {
+      implementation project(':services')
+    }
+  }
+  ```
