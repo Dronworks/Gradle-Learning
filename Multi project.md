@@ -74,3 +74,23 @@ Usually multimodules project needs those modules during the deployment. Hece dur
     }
   }
   ```
+- If subproject depends on another subproject we can add more blocks, and then when we build the main project he will also has the sub project jars.
+  ```
+  project(':web') {
+    dependencies {
+      implementation project(':services')
+    }
+  }
+  project(':services') {
+    dependencies {
+      implementation project(':data')
+    }
+  }
+  ```
+- **OR Not int the root** we can just type inside subproject build.gradle the project it is relies on.
+  ```
+  dependencies {
+    **some 3rd party dependencies**
+    implementation project(':data')
+  }
+  ```
