@@ -1,0 +1,40 @@
+allprojects{
+    task printProjectName {
+        doLast {
+            println project.name
+        }
+    }
+}
+
+subprojects{
+    task printProjectNameSub {
+        doLast {
+            println "SubProject: $project.name"
+        }
+    }
+
+    apply plugin: 'application'
+
+    version = '2.1'
+    group 'com.dronworks'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    }
+}
+
+project(':web') {
+    dependencies {
+        implementation project(':services')
+    }
+}
+
+project(':data') {
+    dependencies {
+        implementation project(':integration')
+    }
+}
