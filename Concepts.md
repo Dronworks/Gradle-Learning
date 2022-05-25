@@ -73,5 +73,12 @@
     useJunitPlatform()
   }
   ```
+- For Junit5 next dependencies are required:
+  ```
+  dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+  }
+  ```
 - To run unit tests in intellij:
   - File -> Settings -> Build,Execution,Deployment -> BildTools -> Gradle -> Run Tests Using -> Intellij  
